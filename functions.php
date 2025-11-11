@@ -332,3 +332,99 @@ function team() {
 
 add_shortcode('teamFunction', 'team');
 
+//TESTIMONIAL
+function testimonial() {
+	ob_start();
+	$args = array(
+		'post_type'      => 'testimonial',   
+		'posts_per_page' => -1,         
+		'order'          => 'ASC',      
+		'orderby'        => 'date'       
+	);
+
+	$query = new WP_Query($args);
+
+	if ($query->have_posts()) :
+		while ($query->have_posts()) : $query->the_post(); ?>
+			
+
+			<div class="item">
+				<div class="row justify-content-center">
+					<div class="col-lg-8 mx-auto">
+
+						<div class="testimonial-block text-center">
+							<blockquote class="mb-5">
+								<p><?php the_content(); ?></p>
+							</blockquote>
+
+							<div class="author-info">
+								<div class="author-pic">
+									
+									<?php if ( has_post_thumbnail() ) : ?>
+										<?php the_post_thumbnail( 'medium', array( 'class' => 'img-fluid rounded-circle' ) ); ?>
+									<?php else : ?>
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/person-1.png" alt="Default Author" class="img-fluid">
+									<?php endif; ?>
+
+								</div>
+								<h3 class="font-weight-bold"> <?php the_field('name'); ?> </h3>
+								<span class="position d-block mb-3"> <?php the_field('position'); ?> </span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div> 
+
+		<?php endwhile;
+		wp_reset_postdata();
+	else :
+		echo '<p>No products found.</p>';
+	endif;
+	return ob_get_clean();
+}
+
+add_shortcode('testimonialFunction', 'testimonial');
+
+//contact
+function contact() {
+	ob_start();
+	$args = array(
+		'post_type'      => 'testimonial',   
+		'posts_per_page' => -1,         
+		'order'          => 'ASC',      
+		'orderby'        => 'date'       
+	);
+
+	$query = new WP_Query($args);
+
+	if ($query->have_posts()) :
+		while ($query->have_posts()) : $query->the_post(); ?>
+
+				 <div class="col-lg-4">
+                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
+                    <div class="service-icon color-1 mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                      </svg>
+                    </div> <!-- /.icon -->
+                    <div class="service-contents">
+                      <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+                    </div> <!-- /.service-contents-->
+                  </div> <!-- /.service -->
+                </div>
+
+
+		<?php endwhile;
+		wp_reset_postdata();
+	else :
+		echo '<p>No products found.</p>';
+	endif;
+	return ob_get_clean();
+}
+
+add_shortcode('contactFunction', 'contact');
+
+
+
+

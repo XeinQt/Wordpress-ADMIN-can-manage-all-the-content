@@ -36,14 +36,14 @@
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 
 					<?php
-							wp_nav_menu(array(
-								'menu' => 'Menu',
-								'container'      => false,
-								'menu_class'     => 'custom-navbar-nav navbar-nav ms-auto mb-5 mb-md-0 text-decoration-none', // Apply Bootstrap nav styling
-								'fallback_cb'    => false,
-								'depth'          => 2, // Allow submenus (for dropdowns)
-							)); 
-						?>
+						wp_nav_menu(array(
+							'menu' => 'Menu',
+							'container'      => false,
+							'menu_class'     => 'custom-navbar-nav navbar-nav ms-auto mb-5 mb-md-0 text-decoration-none', // Apply Bootstrap nav styling
+							'fallback_cb'    => false,
+							'depth'          => 2, // Allow submenus (for dropdowns)
+						)); 
+					?>
 					<!-- <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 						<li class="nav-item active">
 							<a class="nav-link" href="index.html">Home</a>

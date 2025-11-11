@@ -6,8 +6,8 @@
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
-								<h1>Contact</h1>
-								<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+								<h1> <?php the_field("contact_hero"); ?> </h1>
+								<p class="mb-4"> <?php the_field("contact_description"); ?>  </p>
 								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
 							</div>
 						</div>
@@ -42,7 +42,7 @@
                       </svg>
                     </div> <!-- /.icon -->
                     <div class="service-contents">
-                      <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+                      <p> <?php the_field("address"); ?>  </p>
                     </div> <!-- /.service-contents-->
                   </div> <!-- /.service -->
                 </div>
@@ -55,7 +55,7 @@
                       </svg>
                     </div> <!-- /.icon -->
                     <div class="service-contents">
-                      <p>info@yourdomain.com</p>
+                      <p> <?php the_field("email"); ?></p>
                     </div> <!-- /.service-contents-->
                   </div> <!-- /.service -->
                 </div>
@@ -68,7 +68,7 @@
                       </svg>
                     </div> <!-- /.icon -->
                     <div class="service-contents">
-                      <p>+1 294 3925 3939</p>
+                      <p>+<?php the_field("number"); ?></p>
                     </div> <!-- /.service-contents-->
                   </div> <!-- /.service -->
                 </div>
